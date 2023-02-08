@@ -2,7 +2,7 @@
 Puzzle Game
 """
 
-def validate_row(board):
+def validate_row(board: list) -> bool:
     """
     check rows on board
     returns bool
@@ -33,7 +33,7 @@ def validate_row(board):
                 return False
     return True
 
-def validate_column(board):
+def validate_column(board: list) -> bool:
     """
     check columns on board
     returns bool
@@ -95,7 +95,7 @@ def validate_color(board: list) -> bool:
 
     return validate_row(check_rows)
 
-def validate_board(board):
+def validate_board(board: list) -> bool:
     """
     Main function to check if board is valid
     """
