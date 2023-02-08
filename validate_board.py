@@ -89,11 +89,11 @@ def validate_color(board: list) -> bool:
     """
     row_board = [list(i) for i in board]
     column_board = [[row_board[i][j] for i in range(len(row_board))]
-                     for j in range(len(row_board[0]))]
-    check_new_rows = ["".join(row_board[index]) + "".join(column_board[-(index+1)])
-                      for index in range(len(row_board[0]))]
+                        for j in range(len(row_board[0]))]
+    check_rows = ["".join(row_board[-(index+1)])[index:] + "".join(column_board[index][:-(index+1)])
+                        for index in range(len(row_board[0]))]
 
-    return validate_row(check_new_rows)
+    return validate_row(check_rows)
 
 def validate_board(board):
     """
