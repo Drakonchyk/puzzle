@@ -13,6 +13,30 @@ def validate_column(board):
     """
     check columns on board
     returns bool
+    >>> validate_column([\
+ "**** ****",\
+ "***1 ****",\
+ "**  3****",\
+ "* 4 1****",\
+ "     9 5 ",\
+ " 6  83  *",\
+ "3   1  **",\
+ "  8  2***",\
+ "  2  ****"\
+])
+    False
+    >>> validate_column([\
+ "**** ****",\
+ "***1 ****",\
+ "**  3****",\
+ "* 4 1****",\
+ "     9 5 ",\
+ " 6  83  *",\
+ "3   2  **",\
+ "  8  2***",\
+ "  2  ****"\
+])
+    True
     """
     new_board = []
     i = 0
@@ -52,3 +76,7 @@ board = [
 ]
 
 print(validate_board(board))
+
+if __name__ == '__main__':
+    import doctest
+    print(doctest.testmod())
