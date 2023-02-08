@@ -37,8 +37,40 @@ def validate_column(board):
     """
     check columns on board
     returns bool
+    >>> validate_column([\
+ "**** ****",\
+ "***1 ****",\
+ "**  3****",\
+ "* 4 1****",\
+ "     9 5 ",\
+ " 6  83  *",\
+ "3   1  **",\
+ "  8  2***",\
+ "  2  ****"\
+])
+    False
+    >>> validate_column([\
+ "**** ****",\
+ "***1 ****",\
+ "**  3****",\
+ "* 4 1****",\
+ "     9 5 ",\
+ " 6  83  *",\
+ "3   2  **",\
+ "  8  2***",\
+ "  2  ****"\
+])
+    True
     """
-    pass
+    new_board = []
+    i = 0
+    while len(new_board) < len(board[0]):
+        elem_board = ''
+        for j in board:
+            elem_board += j[i]
+        i += 1
+        new_board.append(elem_board)
+    return validate_row(new_board)
 
 def validate_color(board):
     """
@@ -68,3 +100,7 @@ board = [
 ]
 
 print(validate_board(board))
+
+if __name__ == '__main__':
+    import doctest
+    print(doctest.testmod())
