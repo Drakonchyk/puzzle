@@ -14,7 +14,15 @@ def validate_column(board):
     check columns on board
     returns bool
     """
-    pass
+    new_board = []
+    i = 0
+    while len(new_board) < len(board[0]):
+        elem_board = ''
+        for j in board:
+            elem_board += j[i]
+        i += 1
+        new_board.append(elem_board)
+    return validate_row(new_board)
 
 def validate_color(board):
     """
