@@ -2,6 +2,35 @@
 Puzzle Game
 """
 
+def validate_row(board):
+    """
+    check rows on board
+    returns bool
+    """
+    pass
+
+def validate_column(board):
+    """
+    check columns on board
+    returns bool
+    """
+    pass
+
+def validate_color(board):
+    """
+    check nums in colors on board
+    returns bool
+    """
+    pass
+
+def validate_board(board):
+    """
+    Main function to check if board is valid
+    """
+    if validate_row(board) and validate_color(board) and validate_column(board):
+        return True
+    return False
+
 board = [
  "**** ****",
  "***1 ****",
@@ -13,13 +42,5 @@ board = [
  "  8  2***",
  "  2  ****"
 ]
-
-
-def validate_board(board):
-    """
-    Main function to check if board is valid
-    """
-    pass
-
 
 print(validate_board(board))
