@@ -76,7 +76,7 @@ def validate_color(board: list) -> bool:
     """
     check nums in colors on board
     returns bool
-    >>> validate_color("**** ****",\
+    >>> validate_color(["**** ****",\
  "***1 ****",\
  "**  3****",\
  "* 4 1****",\
@@ -84,7 +84,7 @@ def validate_color(board: list) -> bool:
  " 6  83  *",\
  "3   1  **",\
  "  8  2***",\
- "  2  ****")
+ "  2  ****"])
     True
     """
     row_board = [list(i) for i in board]
@@ -103,7 +103,7 @@ def validate_board(board):
         return True
     return False
 
-board = [
+brd = [
  "**** ****",
  "***1 ****",
  "**  3****",
@@ -115,4 +115,8 @@ board = [
  "  2  ****"
 ]
 
-print(validate_board(board))
+print(validate_board(brd))
+
+if __name__ == '__main__':
+    import doctest
+    print(doctest.testmod())
