@@ -98,24 +98,29 @@ def validate_color(board: list) -> bool:
 def validate_board(board: list) -> bool:
     """
     Main function to check if board is valid
+    >>> validate_board(["**** ****",\
+ "***1 ****",\
+ "**  3****",\
+ "* 4 1****",\
+ "     9 5 ",\
+ " 6  83  *",\
+ "3   1  **",\
+ "  8  2***",\
+ "  2  ****"])
+    False
+    >>> validate_board(["**** ****",\
+ "***1 ****",\
+ "**  3****",\
+ "* 4 1****",\
+ "     9 5 ",\
+ " 6  83  *",\
+ "3   2  **",\
+ "  8  2***",\
+ "  2  ****"])
+    True
     """
-    if validate_row(board) and validate_color(board) and validate_column(board):
-        return True
-    return False
+    return validate_row(board) and validate_color(board) and validate_column(board)
 
-brd = [
- "**** ****",
- "***1 ****",
- "**  3****",
- "* 4 1****",
- "     9 5 ",
- " 6  83  *",
- "3   1  **",
- "  8  2***",
- "  2  ****"
-]
-
-print(validate_board(brd))
 
 if __name__ == '__main__':
     import doctest
